@@ -6,5 +6,7 @@
         <h2>Index:</h2>
         <br>
         <a href="/showSimpleForm">Show Simple Form Page</a>
+        <br>
+        <a href="/students/showForm">Show Students Form Page</a>
     </body>
 </html>

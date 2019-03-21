@@ -3,7 +3,7 @@
 <html>
     <body>
         <h1>Form Example</h1>
-        <form action="processForm" method="GET">
+        <form action="advProcessForm" method="GET">
             <input type="text" name="studentName" placeholder="Enter student name" />
             <input type="submit" />
         </form>
