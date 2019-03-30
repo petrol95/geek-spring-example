@@ -31,6 +31,6 @@
         <property name="password" value="geek"/>
     </bean>
 
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
 </beans>
