@@ -17,7 +17,7 @@ public class DiskHibImpl implements DiskHibDao {
         return sessionFactory;
     }
 
-    @Resource(name = "sessionFactory")
+//    @Resource(name = "sessionFactory")
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
