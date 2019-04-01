@@ -46,7 +46,7 @@ public class SimpleDiskDao implements DiskDao {
             }
             statement.close();
         } catch (SQLException ex) {
-            // logger.error("Prblem executing INSERT", ex);
+            // logger.error("Problem executing INSERT", ex);
         } finally {
             closeConnection(connection);
         }
