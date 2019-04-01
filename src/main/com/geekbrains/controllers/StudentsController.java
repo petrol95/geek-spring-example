@@ -14,11 +14,10 @@ import java.util.List;
 @Controller
 @RequestMapping("/students")
 public class StudentsController {
+    private StudentsService studentsService;
 
     @Autowired
     private StudentsCoursesRepository studentsCoursesRepository;
-
-    private StudentsService studentsService;
 
     @Autowired
     public void setStudentsService(StudentsService studentsService) {
@@ -31,7 +30,7 @@ public class StudentsController {
         model.addAttribute("studentsList", allStudents);
         List<StudentCourse> list = (List)studentsCoursesRepository.findAll();
         System.out.println(list);
-//        System.out.println(allStudents.get(0).getCourses());
+        System.out.println(allStudents.get(0).getCourses());
         return "students-list";
     }
 //    private StudentsService studentsService;
