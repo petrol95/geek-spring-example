@@ -5,6 +5,8 @@ import com.geekbrains.repositories.StudentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentsService {
     private StudentsRepository studentsRepository;
@@ -17,8 +19,7 @@ public class StudentsService {
     public StudentsService() {
     }
 
-    public Student getStudentById(Long id) {
-        Student student = studentsRepository.findOneById(id);
-        return student;
+    public List<Student> getAllStudentsList() {
+        return (List<Student>)studentsRepository.findAll();
     }
 }

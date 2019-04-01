@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="geek-spring" />
+        <module name="geek-spring-example" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="geek-spring" target="1.7" />
+      <module name="geek-spring-example" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
