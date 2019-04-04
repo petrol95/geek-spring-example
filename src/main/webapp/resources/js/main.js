@@ -7,6 +7,7 @@ $(document).ready(function() {
 
     $('#consoleTestBtn').on('click', function(event) {
         console.log($('#myInput').val());
+        // console.log('1');
     });
 
     $('.table .editBtn').on('click', function(event) {
@@ -30,6 +31,4 @@ $(document).ready(function() {
         });
         $('.myForm #editModal').modal();
     });
-
-
 });

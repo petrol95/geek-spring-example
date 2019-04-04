@@ -35,7 +35,7 @@ public class StudentsController {
     @RequestMapping(path="/add", method=RequestMethod.GET)
     public String showAddForm(Model model) {
         Student student = new Student();
-//        student.setName("Unknown");
+        student.setName("Unknown");
         model.addAttribute("student", student);
         return "add-student-form";
     }
@@ -46,11 +46,11 @@ public class StudentsController {
         return "redirect:/students/list";
     }
 
-//    @RequestMapping(path="/remove/{id}", method=RequestMethod.GET)
-//    public String removeById(@PathVariable(value = "id") Long studentId) {
-//        studentsService.removeById(studentId);
-//        return "redirect:/students/list";
-//    }
+    @RequestMapping(path="/remove/{id}", method=RequestMethod.GET)
+    public String removeById(@PathVariable(value = "id") Long studentId) {
+        studentsService.removeById(studentId);
+        return "redirect:/students/list";
+    }
 
 
 //    private StudentsService studentsService;

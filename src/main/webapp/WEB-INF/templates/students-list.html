@@ -1,5 +1,4 @@
 <!--/*@thymesVar id="studentsList" type="java.util.List<com.geekbrains.entities.Student>"*/-->
-
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
@@ -15,26 +14,46 @@
 </head>
 
 <body>
-<div align="center">
+    <div class="container">
     <h1>Students List</h1>
-    <table border="1">
+    <table class="table">
         <thead>
             <td>Id</td>
             <td>Name</td>
             <td>Info</td>
+            <td>Actions</td>
+            <td>Check Name</td>
         </thead>
 
         <tr th:each="student : ${studentsList}">
             <td th:text="${student.id}"/>
             <td th:text="${student.name}"/>
-            <!--<td th:text="${student.courses}"/>-->
-            <td th:text="Java"/>
-
+<!--            <td th:text="${student.courses}"/>-->
+<!--            <td th:text="Java"/>-->
+            <td th:text="${student.name.length()}"/>
+            <td>
+                <button class="btn btn-primary removeBtn" th:attr="entryIndex=${student.id}">Remove</button>
+                <a class="btn btn-danger" th:href="'/students/remove/' + ${student.id}" role="button">Remove</a>
+            </td>
+            <td>
+                <p th:if="${student.name.length()} &gt; 3">
+                    Normal
+                </p>
+                <p class="p-3 mb-2 bg-danger text-white" th:unless="${student.name.length()} &gt; 3">
+                    Too short
+                </p>
+            </td>
         </tr>
     </table>
     <br>
     <a href="/">Back To Main Page</a>
-
+    <br>
+    <button id="consoleTestBtn" >Console</button>
+    <input id="myInput" />
 </div>
 </body>
+<footer>
+    <div th:insert="~{my-footer :: foot}">
+    </div>
+</footer>
 </html>
