@@ -1,5 +1,6 @@
 package com.geekbrains.services;
 
+import com.geekbrains.entities.Course;
 import com.geekbrains.entities.Student;
 import com.geekbrains.repositories.StudentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import java.util.List;
 @Service
 public class StudentsService {
     private StudentsRepository studentsRepository;
+
+    private CoursesService coursesService;
 
     @Autowired
     public void setStudentsRepository(StudentsRepository studentsRepository) {
@@ -31,5 +34,16 @@ public class StudentsService {
 
     public void removeById(Long id) {
         studentsRepository.deleteById(id);
+    }
+
+    public List<Course> getCoursesByStudentId(Long id) {
+        return studentsRepository.findOneById(id).getCourses();
+    }
+
+    public List<Course> getMissingCoursesByStudentId(Long id) {
+        List<Course> courses = coursesService.getAllCoursesList();
+        List<Course> studentsCourses = studentsRepository.findOneById(id).getCourses();
+        courses.removeAll(studentsCourses);
+        return courses;
     }
 }

@@ -52,6 +52,12 @@ public class StudentsController {
         return "redirect:/students/list";
     }
 
+    @RequestMapping(path="/courses/{id}", method=RequestMethod.GET)
+    public String showStudentsCoursesInfo(Model model, @PathVariable(value = "id") Long studentId) {
+        model.addAttribute("studentCourses", studentsService.getCoursesByStudentId(studentId));
+        model.addAttribute("studentMissingCourses", studentsService.getMissingCoursesByStudentId(studentId));
+        return "student-courses-list";
+    }
 
 //    private StudentsService studentsService;
 //
@@ -71,6 +77,12 @@ public class StudentsController {
 //        return "student-form";
 //    }
 //
+//        @RequestMapping(path="/add", method=RequestMethod.POST)
+//    public String showAddForm(@RequestParam(value="student") Student student) {
+//        studentsService.addStudent(student);
+//        return "redirect:/students/list";
+//    }
+
 //    @RequestMapping("/processForm")
 //    public String processForm(@ModelAttribute("student") Student student) {
 //        System.out.println(student.getFirstName() + " " + student.getLastName());

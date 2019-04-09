@@ -22,4 +22,6 @@ public interface StudentsRepository extends PagingAndSortingRepository<Student, 
     // 2 вариант
     @Query(value = "SELECT s FROM Student s LEFT JOIN s.courses c GROUP BY s.id ORDER BY count(c)")
     List<Student> getStudentsByCoursesCountDescHQL(Pageable pageable);
+
+    Student findOneById(Long id);
 }
