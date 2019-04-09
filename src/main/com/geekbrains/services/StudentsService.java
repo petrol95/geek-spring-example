@@ -20,6 +20,11 @@ public class StudentsService {
         this.studentsRepository = studentsRepository;
     }
 
+    @Autowired
+    public void setCoursesService(CoursesService coursesService) {
+        this.coursesService = coursesService;
+    }
+
     public StudentsService() {
     }
 
