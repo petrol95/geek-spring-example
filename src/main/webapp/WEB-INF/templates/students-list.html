@@ -38,8 +38,9 @@
 <!--            <td th:text="Java"/>-->
             <td th:text="${student.name.length()}"/>
             <td>
+                <a class="btn btn-primary" th:href="'/students/courses/' + ${student.id}" role="button">Courses Info</a>
                 <button class="btn btn-primary removeBtn" th:attr="entryIndex=${student.id}">Remove</button>
-                <a class="btn btn-danger" th:href="'/students/remove/' + ${student.id}" role="button">Remove</a>
+<!--                <a class="btn btn-danger" th:href="'/students/remove/' + ${student.id}" role="button">Remove</a>-->
             </td>
             <td>
                 <p th:if="${student.name.length()} &gt; 3">

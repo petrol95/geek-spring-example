@@ -29,6 +29,7 @@
             <td th:text="${course.title}"/>
             <td>
                 <button class="btn btn-primary removeBtn" th:attr="entryIndex=${course.id}">Remove</button>
+<!--                <a type="button" class="btn btn-danger removeBtn" th:href="@('/students/courses/remove/' + $(studentId) + '/' + $(course.id))">Remove Course</a>-->
             </td>
         </tr>
     </table>
@@ -47,7 +48,8 @@
             <td th:text="${course.id}"/>
             <td th:text="${course.title}"/>
             <td>
-                <button class="btn btn-primary removeBtn" th:attr="entryIndex=${course.id}">Remove</button>
+                <button class="btn btn-danger removeBtn" th:attr="entryIndex=${course.id}">Remove</button>
+<!--                <a type="button" class="btn btn-primary" th:href="@('/students/courses/add/' + $(studentId) + '/' + $(course.id))">Add Course</a>-->
             </td>
         </tr>
     </table>
